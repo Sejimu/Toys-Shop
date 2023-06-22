@@ -1,3 +1,4 @@
+
 .form-container {
   width: 1000px;
   margin: 0 auto;
@@ -8,4 +9,16 @@
   display: flex;
   /* align-items: center; */
   justify-content: center;
+
+.contacts {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-brand {
+  width: 10%;
+}
+.navbar_img {
+  width: 60px;
+
 }
