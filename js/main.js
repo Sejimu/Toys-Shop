@@ -13,7 +13,6 @@ async function getToys() {
   return data;
 }
 
-
 async function addToys(newData) {
   await fetch(API, {
     method: "POST",
@@ -21,7 +20,6 @@ async function addToys(newData) {
     headers: {
       "Content-Type": "application/json",
     },
-
   });
 }
 
@@ -30,7 +28,6 @@ async function addToys(newData) {
 async function deleteProduct(id) {
   await fetch(`${API}/${id}`, {
     method: "DELETE",
-
   });
   render();
 }
@@ -64,7 +61,6 @@ async function render() {
   });
 }
 
-
 addForm.addEventListener("submit", (e) => {
   e.preventDefault();
   if (
@@ -80,20 +76,18 @@ addForm.addEventListener("submit", (e) => {
     title: titleInp.value,
     price: priceInp.value,
     image: imageInp.value,
-    select: selectInp.value,
+    category: selectInp.value,
   };
   addToys(newToy);
+  render();
 
   titleInp.value = "";
   priceInp.value = "";
   imageInp.value = "";
 });
 
-
-
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete-btn")) {
     deleteProduct(e.target.id);
   }
 });
-
