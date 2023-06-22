@@ -22,6 +22,9 @@ async function addToys(newData) {
       "Content-Type": "application/json",
     },
 
+  });
+}
+
 //! DELETE
 
 async function deleteProduct(id) {
