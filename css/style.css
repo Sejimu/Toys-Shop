@@ -1,3 +1,15 @@
+
+.form-container {
+  width: 1000px;
+  margin: 0 auto;
+}
+.dropdown {
+  width: 100%;
+
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+
 .contacts {
   color: white;
   text-decoration: none;
@@ -8,4 +20,5 @@
 }
 .navbar_img {
   width: 60px;
+
 }
