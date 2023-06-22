@@ -18,36 +18,9 @@
       "id": 3,
       "title": "balls",
       "image": "https://media.istockphoto.com/id/667263282/vector/hand-spinners-illustration-vector-icons-set-on-black-background.jpg?s=612x612&w=0&k=20&c=MILYij4cEK8U37cGYFqAUk6WJ-RqQF6XWOsG0N2eIA8=",
+
       "price": "9.99",
       "category": "doll"
-    },
-    {
-      "title": "qwer",
-      "price": "qasdf",
-      "image": "asdf",
-      "select": "dolls",
-      "id": 4
-    },
-    {
-      "title": "1234",
-      "price": "1234",
-      "image": "123",
-      "select": "cars",
-      "id": 5
-    },
-    {
-      "title": "qwer",
-      "price": "qwert",
-      "image": "asdf",
-      "select": "dolls",
-      "id": 6
-    },
-    {
-      "title": "qwe",
-      "price": "qwer",
-      "image": "wer",
-      "select": "plush toys",
-      "id": 7
     }
   ]
 }
