@@ -99,28 +99,6 @@ body {
   margin-bottom: 0.2em;
 }
 
-.card > .rating {
-  font-size: 1.5em;
-  margin-bottom: 0.8em;
-  color: var(--ratingColor);
-  font-weight: bold;
-  position: relative;
-  width: max-content;
-}
-
-.card > .rating:before {
-  content: "☆☆☆☆☆";
-}
-
-.card > .rating:after {
-  content: "★★★★★";
-  position: absolute;
-  left: 0;
-  z-index: 0;
-  width: calc(var(--rating) * 1%);
-  overflow: hidden;
-}
-
 .card > .link {
   margin-bottom: 1rem;
   color: var(--linkColor);
@@ -165,4 +143,12 @@ body {
 .product-title,
 .product-price {
   color: white;
+}
+
+.product-list {
+  /* justify-content: center; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-evenly;
 }
