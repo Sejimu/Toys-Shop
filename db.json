@@ -8,25 +8,18 @@
       "category": "doll"
     },
     {
-      "title": "123456",
-      "price": "1234567",
-      "image": "qawsedrftghyj",
-      "category": "guns",
+      "title": "neballs",
+      "price": "999999",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6CyAxHAdONQa-SwkYx697tSlQeYjLis95KQ&usqp=CAU",
+      "category": "dolls",
       "id": 4
     },
     {
-      "title": "qawsertg",
-      "price": "asdfg",
-      "image": "asdfgh",
+      "title": "pugalo",
+      "price": "mnogo",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIjqSkrIVMP1-_xR4iDvZMeHA890z9xykkIg&usqp=CAU",
       "category": "dolls",
       "id": 5
-    },
-    {
-      "title": "asdf",
-      "price": "asdf",
-      "image": "sadf",
-      "category": "guns",
-      "id": 6
     }
   ]
 }

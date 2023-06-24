@@ -25,8 +25,8 @@ body {
   width: 60px;
 }
 
-/* product card style */
-.card {
+/* product card-block style */
+.card-block {
   --background: #fff;
   --cardShadow: rgba(32, 33, 37, 0.1);
   --cardShadowHover: rgba(32, 33, 37, 0.06);
@@ -39,7 +39,7 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-  .card {
+  .card-block {
     --background: #3c4043;
     --cardShadow: rgba(0, 0, 0, 0.28);
     --cardShadowHover: rgba(0, 0, 0, 0.16);
@@ -51,8 +51,8 @@ body {
   }
 }
 
-.card {
-  width: 250px;
+.card-block {
+  width: 260px;
   height: 350px;
   aspect-ratio: 2/3;
   background: var(--background) !important;
@@ -65,49 +65,49 @@ body {
   display: inline-block;
 }
 
-.card:hover {
+.card-block:hover {
   transform: translate(-2px, -4px);
   box-shadow: 16px 16px 0 var(--cardShadowHover);
 }
 
-.card:active {
+.card-block:active {
   transform: translate(-2px, -4px);
   border: 2px solid var(--cardBorderActive);
   box-shadow: 4px 4px 0 var(--cardShadowActive);
 }
 
-.card > .icon,
-.card > .title,
-.card > .description {
+.card-block > .icon,
+.card-block > .title,
+.card-block > .description {
   margin-bottom: 0.7em;
   cursor: default;
   user-select: none;
 }
 
-.card > .title {
+.card-block > .title {
   margin-top: 1.5em;
   font-weight: bold;
 }
 
-.card > .description {
+.card-block > .description {
   line-height: 1.5em;
   min-height: 6em;
 }
 
-.card > .icon {
+.card-block > .icon {
   font-size: 3em;
   margin-bottom: 0.2em;
 }
 
-.card > .link {
+.card-block-block > .link {
   margin-bottom: 1rem;
   color: var(--linkColor);
   font-size: 0.8em;
   font-weight: 600;
 }
 
-/* Optional ~ Link the whole card */
-.card > .link::before {
+/* Optional ~ Link the whole card-block */
+.card-block-block > .link::before {
   content: "";
   position: absolute;
   top: 0;
@@ -116,20 +116,21 @@ body {
   height: 100%;
 }
 
-.card > .link:after {
+.card-block-block > .link:after {
   content: "↗️";
   display: inline-block;
   margin-left: 0.3em;
   transition: transform 0.3s ease-in-out;
 }
 
-.card:hover > .link:after {
+.card-block-block:hover > .link:after {
   transform: translate(0.2em, -0.2em);
 }
 
-/* product card style end */
+/* product card-block style end */
 .icon img {
-  width: 200px;
+  width: 209px;
+  height: 180px;
   border-radius: 15px;
 }
 
