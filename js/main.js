@@ -11,12 +11,24 @@ const editTitleInp = document.querySelector("#edit-title");
 const editPriceInp = document.querySelector("#edit-price");
 const editImageInp = document.querySelector("#edit-image");
 
+//? Pagination
+
+const pagList = document.querySelector(".pagination-list");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+
+const limit = 10;
+let currentPage = 1;
+let pageTotalCount = 1;
+
 const API = "http://localhost:8000/toys";
 
 // !
 async function getToys() {
-  const res = await fetch(API);
+  const res = await fetch(`${API}?_limit=${limit}&_page=${currentPage}`);
   const data = await res.json();
+  const count = res.headers.get("x-total-count");
+  pageTotalCount = Math.ceil(count / limit);
   return data;
 }
 
@@ -76,21 +88,27 @@ async function render() {
                 alt=""
               />
             </div>
-            <div class="product-title">${item.title}</div>
+            <div class="product-title title-name">${item.title}</div>
             <div class="product-price">${item.price}</div>
             <div class="product-price">${item.category}</div>
             <div class="product-btn-loc">
+
+              
+
               <button id="${item.id}" class="btn btn-dark edit-btn" data-bs-toggle="modal"
               data-bs-target="#exampleModal" >Edit</button>
+
               <button id="${item.id}" class="btn btn-danger delete-btn">Delete</button>
             </div>
 
           </div>
         `;
   });
+  renderPagination();
 }
 // ! CREATE
 
+//? AddForm
 addForm.addEventListener("submit", (e) => {
   e.preventDefault();
   if (
@@ -115,15 +133,19 @@ addForm.addEventListener("submit", (e) => {
   addToys(newToy);
   render();
 });
+//? AddForm ends
 
 // ! DELETE
+
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete-btn")) {
     deleteProduct(e.target.id);
   }
 });
 
-// ! EDIT
+
+//? Edit form starts
+
 let id = null;
 
 document.addEventListener("click", async (e) => {
@@ -157,3 +179,52 @@ editForm.addEventListener("submit", (e) => {
 
   editProduct(toysList, id);
 });
+//? Edit form ends
+
+//? Pagination
+function renderPagination() {
+  pagList.innerHTML = "";
+  for (let i = 1; i <= pageTotalCount; i++) {
+    pagList.innerHTML += `
+		<li class="page-item ${
+      i === currentPage ? "active" : ""
+    }"><button class="page-link page-number">${i}</button></li>
+		`;
+  }
+
+  if (currentPage <= 1) {
+    prev.classList.add("disabled");
+  } else {
+    prev.classList.remove("disabled");
+  }
+
+  if (currentPage >= pageTotalCount) {
+    next.classList.add("disabled");
+  } else {
+    next.classList.remove("disabled");
+  }
+}
+
+next.addEventListener("click", () => {
+  if (currentPage >= pageTotalCount) {
+    return;
+  }
+  currentPage++;
+  render();
+});
+
+prev.addEventListener("click", () => {
+  if (currentPage <= 1) {
+    return;
+  }
+  currentPage--;
+  render();
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("page-number")) {
+    currentPage = +e.target.innerText;
+    render();
+  }
+});
+//? Pagination end
