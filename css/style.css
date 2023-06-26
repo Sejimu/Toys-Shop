@@ -169,3 +169,7 @@ body {
   background-color: #3c4043 !important;
   color: white !important;
 }
+
+.footer {
+  justify-content: end;
+}
