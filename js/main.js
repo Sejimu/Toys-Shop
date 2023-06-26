@@ -17,12 +17,13 @@ const pagList = document.querySelector(".pagination-list");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 
-const limit = 6;
+const limit = 10;
 let currentPage = 1;
 let pageTotalCount = 1;
 
 const API = "http://localhost:8000/toys";
 
+// !
 async function getToys() {
   const res = await fetch(`${API}?_limit=${limit}&_page=${currentPage}`);
   const data = await res.json();
@@ -31,6 +32,7 @@ async function getToys() {
   return data;
 }
 
+// !CREATE
 async function addToys(newData) {
   await fetch(API, {
     method: "POST",
@@ -41,7 +43,7 @@ async function addToys(newData) {
   });
 }
 
-//! PATCH
+//! EDIT
 
 async function editProduct(newData, id) {
   await fetch(`${API}/${id}`, {
@@ -71,6 +73,7 @@ async function deleteProduct(id) {
 
 render();
 
+// ! READ
 async function render() {
   const data = await getToys();
 
@@ -89,8 +92,12 @@ async function render() {
             <div class="product-price">${item.price}</div>
             <div class="product-price">${item.category}</div>
             <div class="product-btn-loc">
-              <button id="${item.id}" data-bs-toggle="modal"
-				      data-bs-target="#exampleModal" class="btn btn-dark edit-btn">Edit</button>
+
+              
+
+              <button id="${item.id}" class="btn btn-dark edit-btn" data-bs-toggle="modal"
+              data-bs-target="#exampleModal" >Edit</button>
+
               <button id="${item.id}" class="btn btn-danger delete-btn">Delete</button>
             </div>
 
@@ -99,6 +106,7 @@ async function render() {
   });
   renderPagination();
 }
+// ! CREATE
 
 //? AddForm
 addForm.addEventListener("submit", (e) => {
@@ -127,20 +135,24 @@ addForm.addEventListener("submit", (e) => {
 });
 //? AddForm ends
 
-//?delete
+// ! DELETE
+
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete-btn")) {
     deleteProduct(e.target.id);
   }
 });
 
+
 //? Edit form starts
+
 let id = null;
 
 document.addEventListener("click", async (e) => {
   if (e.target.classList.contains("edit-btn")) {
     id = e.target.id;
     const toy = await getOneToy(id);
+    console.log(toy);
 
     editTitleInp.value = toy.title;
     editPriceInp.value = toy.price;
@@ -165,7 +177,7 @@ editForm.addEventListener("submit", (e) => {
     image: editImageInp.value,
   };
 
-  editProduct(id, toysList);
+  editProduct(toysList, id);
 });
 //? Edit form ends
 
