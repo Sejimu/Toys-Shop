@@ -11,6 +11,10 @@ const editTitleInp = document.querySelector("#edit-title");
 const editPriceInp = document.querySelector("#edit-price");
 const editImageInp = document.querySelector("#edit-image");
 
+// ? search
+const searchInp = document.querySelector("#search");
+let searchVal = "";
+
 //? Pagination
 
 const pagList = document.querySelector(".pagination-list");
@@ -25,7 +29,9 @@ const API = "http://localhost:8000/toys";
 
 // !
 async function getToys() {
-  const res = await fetch(`${API}?_limit=${limit}&_page=${currentPage}`);
+  const res = await fetch(
+    `${API}?_limit=${limit}&_page=${currentPage}&q=${searchVal}`
+  );
   const data = await res.json();
   const count = res.headers.get("x-total-count");
   pageTotalCount = Math.ceil(count / limit);
@@ -143,7 +149,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-
 //? Edit form starts
 
 let id = null;
@@ -228,3 +233,11 @@ document.addEventListener("click", (e) => {
   }
 });
 //? Pagination end
+
+//? search
+
+searchInp.addEventListener("input", (e) => {
+  searchVal = searchInp.value;
+  currentPage = 1;
+  render();
+});
