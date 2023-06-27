@@ -172,9 +172,9 @@ body {
   background-color: #3c4043 !important;
   color: white !important;
 }
-.page-item {
+/* .page-item {
   z-index: -1000;
-}
+} */
 
 .showPanel-btn {
   color: white !important;
@@ -696,5 +696,5 @@ body {
 
 .boss {
   /* visibility: hidden; */
-  display: none !important;
+  display: none;
 }

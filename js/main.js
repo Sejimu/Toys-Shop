@@ -142,7 +142,7 @@ async function render() {
               data-bs-target="#exampleModal">Edit</button>
               <button class="btn btn-primary desc-btn" data-bs-toggle="modal" id="${item.id}"
                data-bs-target="#exampleModal1">description</button>
-              <button id="${item.id}" class="basket-btn delete-btn boss">
+              <button id="${item.id}" class="basket-btn delete-btn">
             <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" 
             id="${item.id}"
             class="icon delete-btn">
@@ -336,7 +336,7 @@ logInBTN.addEventListener("click", async (e) => {
     if (item.login == emailLoginInp.value && item.pass == passLoginInp.value) {
       loginModal.style.visibility = "hidden";
       if (item.type == "admin") {
-        boss.style.display = "block !important";
+        boss.style.display = "block";
       }
     } else {
       // alert("WRONG LOGIN OR PASSWORD");
