@@ -10,6 +10,7 @@ const editForm = document.querySelector("#edit-form");
 const editTitleInp = document.querySelector("#edit-title");
 const editPriceInp = document.querySelector("#edit-price");
 const editImageInp = document.querySelector("#edit-image");
+const editSelectInp = document.querySelector("#edit-select");
 
 //? description modal
 const descImg = document.querySelector("#description-image");
@@ -36,12 +37,16 @@ let pageTotalCount = 1;
 // ?toggle-switch
 const toggleSwitches = document.querySelectorAll(".toggle-switch");
 
+// ? filter
+const radios = document.querySelectorAll("input[type='radio']");
+let category = "";
+
 const API = "http://localhost:8000/toys";
 
 // !
 async function getToys() {
   const res = await fetch(
-    `${API}?_limit=${limit}&_page=${currentPage}&q=${searchVal}`
+    `${API}?_limit=${limit}&_page=${currentPage}&q=${searchVal}&category_like=${category}`
   );
   const data = await res.json();
   const count = res.headers.get("x-total-count");
@@ -175,6 +180,7 @@ document.addEventListener("click", async (e) => {
     editTitleInp.value = toy.title;
     editPriceInp.value = toy.price;
     editImageInp.value = toy.image;
+    editSelectInp.value = toy.category;
   }
 });
 
@@ -193,6 +199,7 @@ editForm.addEventListener("submit", (e) => {
     title: editTitleInp.value,
     price: editPriceInp.value,
     image: editImageInp.value,
+    category: editSelectInp.value,
   };
 
   editProduct(toysList, id);
@@ -270,6 +277,7 @@ toggleSwitches.forEach((item) => {
   });
 });
 
+
 document.addEventListener("click", async (e) => {
   if (e.target.classList.contains("desc-btn")) {
     id = e.target.id;
@@ -281,4 +289,12 @@ document.addEventListener("click", async (e) => {
     descprice.value = toy.price;
     descImg.value = toy.image;
   }
+
+// ? фильтрация
+radios.forEach((item) => {
+  item.addEventListener("change", (e) => {
+    category = e.target.id;
+    render();
+  });
+
 });
