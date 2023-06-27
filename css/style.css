@@ -33,6 +33,9 @@ body {
 
 #add-form h2 {
   color: #fff;
+  background: linear-gradient(90deg, #b600a8 11%, #c471ed 50%, #ff000f 68%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* product card-block style */
