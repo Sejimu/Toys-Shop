@@ -288,7 +288,7 @@ document.addEventListener("click", async (e) => {
     desctitle.value = toy.title;
     descprice.value = toy.price;
     descImg.value = toy.image;
-  }
+  }});
 
 // ? фильтрация
 radios.forEach((item) => {
