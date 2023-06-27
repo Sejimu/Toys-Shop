@@ -12,6 +12,14 @@ const editPriceInp = document.querySelector("#edit-price");
 const editImageInp = document.querySelector("#edit-image");
 const editSelectInp = document.querySelector("#edit-select");
 
+//? description modal
+const descImg = document.querySelector("#description-image");
+const desctitle = document.querySelector("#description-title");
+const descprice = document.querySelector("#description-price");
+const descDesc = document.querySelector("#description-desc");
+
+const descModal = document.querySelector(".card-block");
+
 // ? search
 const searchInp = document.querySelector("#search");
 let searchVal = "";
@@ -107,8 +115,9 @@ async function render() {
             <div class="product-price item-end">${item.category}</div>
             <div class="product-btn-loc">
               <button id="${item.id}" class="btn btn-dark edit-btn" data-bs-toggle="modal"
-              data-bs-target="#exampleModal" >Edit</button>
-              
+              data-bs-target="#exampleModal">Edit</button>
+              <button class="btn btn-primary desc-btn" data-bs-toggle="modal" id="${item.id}"
+               data-bs-target="#exampleModal1">description</button>
               <button id="${item.id}" class="basket-btn delete-btn">
             <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" 
             id="${item.id}"
@@ -167,7 +176,6 @@ document.addEventListener("click", async (e) => {
   if (e.target.classList.contains("edit-btn")) {
     id = e.target.id;
     const toy = await getOneToy(id);
-    console.log(toy);
 
     editTitleInp.value = toy.title;
     editPriceInp.value = toy.price;
@@ -269,10 +277,24 @@ toggleSwitches.forEach((item) => {
   });
 });
 
+
+document.addEventListener("click", async (e) => {
+  if (e.target.classList.contains("desc-btn")) {
+    id = e.target.id;
+
+    const toy = await getOneToy(id);
+    console.log(toy);
+
+    desctitle.value = toy.title;
+    descprice.value = toy.price;
+    descImg.value = toy.image;
+  }
+
 // ? фильтрация
 radios.forEach((item) => {
   item.addEventListener("change", (e) => {
     category = e.target.id;
     render();
   });
+
 });
