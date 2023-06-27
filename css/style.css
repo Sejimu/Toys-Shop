@@ -698,3 +698,11 @@ body {
   /* visibility: hidden; */
   display: none;
 }
+
+.edit-btn {
+  visibility: hidden;
+}
+
+.delete-btn {
+  visibility: hidden;
+}

@@ -4,6 +4,9 @@ const priceInp = document.querySelector("#price");
 const imageInp = document.querySelector("#image");
 const selectInp = document.querySelector("#select");
 const addForm = document.querySelector("#add-form");
+const descInp = document.querySelector("#description");
+
+const descContainer = document.querySelector("#description-desc");
 
 //? edit modal
 const editForm = document.querySelector("#edit-form");
@@ -44,7 +47,13 @@ let category = "";
 // ? register
 const logInBTN = document.querySelector(".flip-card__btn1");
 const RegBTN = document.querySelector(".flip-card__btn2");
-// console.log(logInRegBTN);
+const boss = document.querySelector(".boss");
+const loginModal = document.querySelector("#edit-modal1");
+const emailLoginInp = document.querySelector("#email-login");
+const passLoginInp = document.querySelector("#pass-login");
+const nameRegInp = document.querySelector("#register-name");
+const emailRegInp = document.querySelector("#register-email");
+const passRegInp = document.querySelector("#register-pass");
 
 const API = "http://localhost:8000/toys";
 const APIcustomer = "http://localhost:8000/customer";
@@ -140,8 +149,8 @@ async function render() {
             <div class="product-btn-loc">
               <button id="${item.id}" class="boss btn btn-dark edit-btn " data-bs-toggle="modal"
               data-bs-target="#exampleModal">Edit</button>
-              <button class="btn btn-primary desc-btn" data-bs-toggle="modal" id="${item.id}"
-               data-bs-target="#exampleModal1">description</button>
+              <button class="btn btn-dark desc-btn" data-bs-toggle="modal" id="${item.id}"
+               data-bs-target="#exampleModal1" id="${item.id}">description</button>
               <button id="${item.id}" class="basket-btn delete-btn">
             <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" 
             id="${item.id}"
@@ -174,6 +183,7 @@ addForm.addEventListener("submit", (e) => {
     price: priceInp.value,
     image: imageInp.value,
     category: selectInp.value,
+    description: descInp.value,
   };
 
   titleInp.value = "";
@@ -308,9 +318,9 @@ document.addEventListener("click", async (e) => {
     const toy = await getOneToy(id);
     console.log(toy);
 
-    desctitle.value = toy.title;
-    descprice.value = toy.price;
-    descImg.value = toy.image;
+    descContainer.innerText = `
+    ${toy.description}
+    `;
   }
 });
 
@@ -322,12 +332,6 @@ radios.forEach((item) => {
   });
 });
 
-const boss = document.querySelector(".boss");
-
-const loginModal = document.querySelector("#edit-modal1");
-const emailLoginInp = document.querySelector("#email-login");
-const passLoginInp = document.querySelector("#pass-login");
-
 // ? register
 logInBTN.addEventListener("click", async (e) => {
   customer = await getCustomer();
@@ -337,6 +341,12 @@ logInBTN.addEventListener("click", async (e) => {
       loginModal.style.visibility = "hidden";
       if (item.type == "admin") {
         boss.style.display = "block";
+        document.querySelectorAll(".edit-btn").forEach((item) => {
+          item.style.visibility = "visible";
+        });
+        document.querySelectorAll(".delete-btn").forEach((item) => {
+          item.style.visibility = "visible";
+        });
       }
     } else {
       // alert("WRONG LOGIN OR PASSWORD");
@@ -344,17 +354,12 @@ logInBTN.addEventListener("click", async (e) => {
   });
 });
 
-const nameRegInp = document.querySelector("#register-name");
-const emailRegInp = document.querySelector("#register-email");
-const passRegInp = document.querySelector("#register-pass");
-
 RegBTN.addEventListener("click", (e) => {
   if (
     !nameRegInp.value.trim() ||
     !emailRegInp.value.trim() ||
     !passRegInp.value.trim()
   ) {
-    alert("Fill all Inputs");
     return;
   }
   const user = {
@@ -366,3 +371,5 @@ RegBTN.addEventListener("click", (e) => {
   addCustomer(user);
   loginModal.style.visibility = "hidden";
 });
+
+// ? modal description
