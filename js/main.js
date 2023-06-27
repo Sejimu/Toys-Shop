@@ -21,7 +21,7 @@ const pagList = document.querySelector(".pagination-list");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 
-const limit = 10;
+const limit = 8;
 let currentPage = 1;
 let pageTotalCount = 1;
 
@@ -95,15 +95,11 @@ async function render() {
               />
             </div>
             <div class="product-title title-name">${item.title}</div>
-            <div class="product-price">${item.price}</div>
-            <div class="product-price">${item.category}</div>
+            <div class="product-price item-end">${item.price}</div>
+            <div class="product-price item-end">${item.category}</div>
             <div class="product-btn-loc">
-
-              
-
               <button id="${item.id}" class="btn btn-dark edit-btn" data-bs-toggle="modal"
               data-bs-target="#exampleModal" >Edit</button>
-
               <button id="${item.id}" class="btn btn-danger delete-btn">Delete</button>
             </div>
 

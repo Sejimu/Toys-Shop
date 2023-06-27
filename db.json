@@ -1,39 +1,46 @@
 {
   "toys": [
     {
-      "id": 3,
-      "title": "balls",
-      "image": "https://media.istockphoto.com/id/667263282/vector/hand-spinners-illustration-vector-icons-set-on-black-background.jpg?s=612x612&w=0&k=20&c=MILYij4cEK8U37cGYFqAUk6WJ-RqQF6XWOsG0N2eIA8=",
-      "price": "9.99",
-      "category": "doll"
+      "id": 1,
+      "title": "BRG-USA BRG9 Elite 9mm 4 Black 16+1 - 16+1 Rounds",
+      "image": "https://assets.basspro.com/image/upload/c_scale,f_auto,q_auto,w_280/v1685051836/DigitalCreative/2023/Dept-Pages/Shooting/Guns_DeptBanners/Guns-Sub-Cat/beretta-pistol.jpg",
+      "price": "$239,99",
+      "category": "Guns"
     },
     {
-      "title": "neballs",
-      "price": "999999",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6CyAxHAdONQa-SwkYx697tSlQeYjLis95KQ&usqp=CAU",
-      "category": "dolls",
+      "id": 2,
+      "title": "Landor Arms AR Tactical 12 Gauge Shotgun",
+      "image": "https://www.budsgunshop.com/images/imagecache/128363_sm.jpg?v=",
+      "price": "$321,49",
+      "category": "Guns"
+    },
+    {
+      "id": 3,
+      "title": "ATI Milsport 5.56MM 16 Barrel 13 MLOK 1:7",
+      "image": "https://www.budsgunshop.com/images/imagecache/411561014_1_sm.jpg?v=2",
+      "price": "$399.99",
+      "category": "Guns"
+    },
+    {
+      "title": "Radical Firearms RPR SPC II 6.8mm Remington Semi Auto Rifle",
+      "price": "$443.49",
+      "image": "https://www.budsgunshop.com/images/imagecache/109702_sm.jpg?v=",
+      "category": "Guns",
       "id": 4
     },
     {
-      "title": "pugalo",
-      "price": "mnogo",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIjqSkrIVMP1-_xR4iDvZMeHA890z9xykkIg&usqp=CAU",
-      "category": "dolls",
+      "title": "Tisas 1911-A1 Service Enhanced .45",
+      "price": "$399.99",
+      "image": "https://www.budsgunshop.com/images/imagecache/411560877_2_sm.jpg?v=3",
+      "category": "Guns",
       "id": 5
     },
     {
-      "title": "qwertyu",
-      "price": "1000000",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIjqSkrIVMP1-_xR4iDvZMeHA890z9xykkIg&usqp=CAU",
-      "category": "guns",
+      "title": "Kel-Tec P17 .22LR Pistol 3.9 Black Finish 16+1 - Blue/Black",
+      "price": "$219.99",
+      "image": "https://www.budsgunshop.com/images/imagecache/117886_sm.jpg?v=1",
+      "category": "Guns",
       "id": 6
-    },
-    {
-      "title": "qwerty",
-      "price": "12345678",
-      "image": "https://i.pinimg.com/originals/10/f4/1c/10f41c14b6449b0af2b922d97872a780.jpg",
-      "category": "dolls",
-      "id": 7
     },
     {
       "title": "qwertyui",
@@ -153,13 +160,6 @@
       "image": "https://media.istockphoto.com/id/667263282/vector/hand-spinners-illustration-vector-icons-set-on-black-background.jpg?s=612x612&w=0&k=20&c=MILYij4cEK8U37cGYFqAUk6WJ-RqQF6XWOsG0N2eIA8=",
       "category": "guns",
       "id": 24
-    },
-    {
-      "title": "qw",
-      "price": "e",
-      "image": "https://media.istockphoto.com/id/667263282/vector/hand-spinners-illustration-vector-icons-set-on-black-background.jpg?s=612x612&w=0&k=20&c=MILYij4cEK8U37cGYFqAUk6WJ-RqQF6XWOsG0N2eIA8=",
-      "category": "guns",
-      "id": 25
     }
   ]
 }
