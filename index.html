@@ -153,7 +153,10 @@
                 <option>Granades</option>
               </select>
 
-              <button class="btn btn-dark w-50 mb-2" data-bs-dismiss="modal">
+              <button
+                class="btn btn-dark w-50 mb-2 mt-3"
+                data-bs-dismiss="modal"
+              >
                 Save
               </button>
             </form>
@@ -181,6 +184,46 @@
       </ul>
     </nav>
     <!-- ? PAGINATION ENDS-->
+
+    <!-- ? Item description starts-->
+    <div
+      class="modal fade"
+      id="exampleModal1"
+      tabindex="1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Description</h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              class="d-flex flex-column w-100 align-items-center"
+              id="description-form"
+            >
+              <div id="description-image"></div>
+              <div id="description-title"></div>
+              <div id="description-price"></div>
+              <div id="description-desc">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Impedit deserunt recusandae maiores corrupti, est cumque
+                voluptatem. Dolorum aspernatur exercitationem facere aut ipsa
+                deleniti enim? Deserunt molestiae culpa voluptate obcaecati ab.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ? Item description ends-->
 
     <!-- ? Footer starts -->
     <footer class="bg-transparent w-100">
