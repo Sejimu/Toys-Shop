@@ -277,7 +277,6 @@ toggleSwitches.forEach((item) => {
   });
 });
 
-
 document.addEventListener("click", async (e) => {
   if (e.target.classList.contains("desc-btn")) {
     id = e.target.id;
@@ -289,6 +288,7 @@ document.addEventListener("click", async (e) => {
     descprice.value = toy.price;
     descImg.value = toy.image;
   }
+});
 
 // ? фильтрация
 radios.forEach((item) => {
@@ -296,5 +296,4 @@ radios.forEach((item) => {
     category = e.target.id;
     render();
   });
-
 });
