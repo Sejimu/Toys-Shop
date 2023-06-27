@@ -25,6 +25,7 @@ const descModal = document.querySelector(".card-block");
 
 // ? search
 const searchInp = document.querySelector("#search");
+const searchInpMenu = document.querySelector("#search1");
 let searchVal = "";
 
 //? Pagination
@@ -292,6 +293,11 @@ document.addEventListener("click", (e) => {
 
 searchInp.addEventListener("input", (e) => {
   searchVal = searchInp.value;
+  currentPage = 1;
+  render();
+});
+searchInpMenu.addEventListener("input", (e) => {
+  searchVal = searchInpMenu.value;
   currentPage = 1;
   render();
 });

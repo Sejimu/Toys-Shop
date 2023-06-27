@@ -92,7 +92,7 @@
             src="https://img.icons8.com/?size=2x&id=vyU7t8cxoKgD&format=png"
             alt=""
         /></a>
-        <button data-text="Awesome" class="button">
+        <button data-text="Awesome" class="button contact__btn_navbar">
           <a href="#footer-contacts" class="contacts actual-text"
             >&nbsp;Contacts&nbsp;</a
           >
@@ -104,7 +104,7 @@
           >
         </button>
 
-        <button data-text="Awesome" class="button toggle-switch">
+        <button data-text="Awesome" class="button toggle-switch joke">
           <span class="actual-text toggle-switch">&nbsp;switch&nbsp;</span>
           <span class="hover-text toggle-switch" aria-hidden="true"
             >&nbsp;switch&nbsp;</span
@@ -114,7 +114,7 @@
         <form class="d-flex" role="search">
           <input
             id="search"
-            class="input"
+            class="input search__inp_navbar"
             type="search"
             placeholder="Search"
             aria-label="Search"
@@ -123,6 +123,71 @@
           />
           <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
         </form>
+
+        <button
+          id="burger-menu__btn"
+          type="button"
+          class="cssbuttons-io-button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+        >
+          Menu
+          <div class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                fill="currentColor"
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+              ></path>
+            </svg>
+          </div>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-end w-75 adaptive"
+          tabindex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
+        >
+          <div class="offcanvas-body burger-menu__body">
+            <form class="d-flex" role="search">
+              <input
+                id="search1"
+                class="input"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                name="text"
+                placeholder="Enter your text..."
+              />
+              <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+            </form>
+            <button data-text="Awesome" class="button">
+              <a href="#footer-contacts" class="contacts actual-text"
+                >&nbsp;Contacts&nbsp;</a
+              >
+              <a
+                href="#footer-contacts"
+                class="contacts hover-text"
+                aria-hidden="true"
+                >&nbsp;Contacts&nbsp;</a
+              >
+            </button>
+
+            <button data-text="Awesome" class="button toggle-switch">
+              <span class="actual-text toggle-switch">&nbsp;switch&nbsp;</span>
+              <span class="hover-text toggle-switch" aria-hidden="true"
+                >&nbsp;switch&nbsp;</span
+              >
+            </button>
+          </div>
+        </div>
       </div>
     </nav>
 
