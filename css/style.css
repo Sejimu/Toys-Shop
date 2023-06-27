@@ -22,11 +22,12 @@ body {
   text-decoration: none;
 }
 
-.navbar-brand {
-  width: 10%;
-}
 .navbar_img {
   width: 60px;
+}
+
+#add-form h2 {
+  color: #fff;
 }
 
 /* product card-block style */
@@ -56,8 +57,8 @@ body {
 }
 
 .card-block {
-  width: 260px;
-  height: 350px;
+  width: 300px;
+  height: 370px;
   aspect-ratio: 2/3;
   background: var(--background) !important;
   color: var(--textColor);
@@ -133,7 +134,7 @@ body {
 
 /* product card-block style end */
 .icon img {
-  width: 209px;
+  width: 100%;
   height: 180px;
   border-radius: 15px;
 }
@@ -141,8 +142,7 @@ body {
 .product-btn-loc {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  column-gap: 5px;
+  margin-top: 10px;
 }
 
 .edit-btn {
@@ -155,17 +155,11 @@ body {
 }
 
 .product-list {
-  /* justify-content: center; */
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: space-evenly;
   text-align: center;
-}
-
-.title-name {
-  font-size: 24px;
-  font-weight: bold;
 }
 
 .page-link {
@@ -174,6 +168,14 @@ body {
   color: white !important;
 }
 
-.footer {
-  justify-content: end;
+.showPanel-btn {
+  color: white !important;
+}
+
+.item-end {
+  text-align: end;
+}
+
+.contacts {
+  transition: width 2s, height 4s;
 }
