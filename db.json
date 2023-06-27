@@ -203,5 +203,42 @@
       "category": "grenade",
       "id": 29
     }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "login": "sejimu123",
+      "pass": "qwerty",
+      "type": "admin",
+      "name": "Nursultan"
+    },
+    {
+      "id": 2,
+      "login": "shama123",
+      "pass": "1234",
+      "type": "user",
+      "name": "Shaimirdin"
+    },
+    {
+      "login": "qwerty@gmail.com",
+      "pass": "12345",
+      "name": "nurs",
+      "type": "user",
+      "id": 3
+    },
+    {
+      "login": "1234@gmail.com",
+      "pass": "qwerty",
+      "name": "Altynbek",
+      "type": "user",
+      "id": 4
+    },
+    {
+      "login": "poiuyt@gmail.com",
+      "pass": "12345",
+      "name": "poiuyt",
+      "type": "user",
+      "id": 5
+    }
   ]
 }

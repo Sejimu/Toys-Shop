@@ -41,7 +41,13 @@ const toggleSwitches = document.querySelectorAll(".toggle-switch");
 const radios = document.querySelectorAll("input[type='radio']");
 let category = "";
 
+// ? register
+const logInBTN = document.querySelector(".flip-card__btn1");
+const RegBTN = document.querySelector(".flip-card__btn2");
+// console.log(logInRegBTN);
+
 const API = "http://localhost:8000/toys";
+const APIcustomer = "http://localhost:8000/customer";
 
 // !
 async function getToys() {
@@ -52,6 +58,24 @@ async function getToys() {
   const count = res.headers.get("x-total-count");
   pageTotalCount = Math.ceil(count / limit);
   return data;
+}
+
+// !get for customer
+
+async function getCustomer() {
+  const res = await fetch(APIcustomer);
+  const data = await res.json();
+  return data;
+}
+// ! post for customer
+async function addCustomer(newData) {
+  await fetch(APIcustomer, {
+    method: "POST",
+    body: JSON.stringify(newData),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 }
 
 // !CREATE
@@ -114,11 +138,11 @@ async function render() {
             <div class="product-price item-end">${item.price}</div>
             <div class="product-price item-end">${item.category}</div>
             <div class="product-btn-loc">
-              <button id="${item.id}" class="btn btn-dark edit-btn" data-bs-toggle="modal"
+              <button id="${item.id}" class="boss btn btn-dark edit-btn " data-bs-toggle="modal"
               data-bs-target="#exampleModal">Edit</button>
               <button class="btn btn-primary desc-btn" data-bs-toggle="modal" id="${item.id}"
                data-bs-target="#exampleModal1">description</button>
-              <button id="${item.id}" class="basket-btn delete-btn">
+              <button id="${item.id}" class="basket-btn delete-btn boss">
             <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" 
             id="${item.id}"
             class="icon delete-btn">
@@ -296,4 +320,49 @@ radios.forEach((item) => {
     category = e.target.id;
     render();
   });
+});
+
+const boss = document.querySelector(".boss");
+
+const loginModal = document.querySelector("#edit-modal1");
+const emailLoginInp = document.querySelector("#email-login");
+const passLoginInp = document.querySelector("#pass-login");
+
+// ? register
+logInBTN.addEventListener("click", async (e) => {
+  customer = await getCustomer();
+
+  customer.forEach((item) => {
+    if (item.login == emailLoginInp.value && item.pass == passLoginInp.value) {
+      loginModal.style.visibility = "hidden";
+      if (item.type == "admin") {
+        boss.style.display = "block !important";
+      }
+    } else {
+      // alert("WRONG LOGIN OR PASSWORD");
+    }
+  });
+});
+
+const nameRegInp = document.querySelector("#register-name");
+const emailRegInp = document.querySelector("#register-email");
+const passRegInp = document.querySelector("#register-pass");
+
+RegBTN.addEventListener("click", (e) => {
+  if (
+    !nameRegInp.value.trim() ||
+    !emailRegInp.value.trim() ||
+    !passRegInp.value.trim()
+  ) {
+    alert("Fill all Inputs");
+    return;
+  }
+  const user = {
+    login: emailRegInp.value,
+    pass: passRegInp.value,
+    name: nameRegInp.value,
+    type: "user",
+  };
+  addCustomer(user);
+  loginModal.style.visibility = "hidden";
 });
