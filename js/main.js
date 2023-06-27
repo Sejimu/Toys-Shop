@@ -25,6 +25,9 @@ const limit = 8;
 let currentPage = 1;
 let pageTotalCount = 1;
 
+// ?toggle-switch
+const toggleSwitches = document.querySelectorAll(".toggle-switch");
+
 const API = "http://localhost:8000/toys";
 
 // !
@@ -102,7 +105,6 @@ async function render() {
               data-bs-target="#exampleModal" >Edit</button>
               <button id="${item.id}" class="btn btn-danger delete-btn">Delete</button>
             </div>
-
           </div>
         `;
   });
@@ -236,4 +238,19 @@ searchInp.addEventListener("input", (e) => {
   searchVal = searchInp.value;
   currentPage = 1;
   render();
+});
+
+// ? toggle switch
+
+toggleSwitches.forEach((item) => {
+  let count = 0;
+  item.addEventListener("click", (e) => {
+    if (count % 2 === 0) {
+      document.body.classList.remove("body1");
+      count++;
+    } else {
+      document.body.classList.add("body1");
+      count++;
+    }
+  });
 });
